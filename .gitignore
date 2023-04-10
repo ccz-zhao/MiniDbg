@@ -36,3 +36,6 @@ build/
 
 # 忽略.vscode 文件夹
 .vscode/
+
+# 忽略 bin 文件夹
+bin/
