@@ -50,7 +50,13 @@ include_directories(ext/libelfin ext/linenoise include)
 ##################
 # minidbg
 ##################
-add_executable(minidbg minidbg.cc src/debugger.cc src/utils.cc ext/linenoise/linenoise.c)
+set (MINIDBG_SRCS 
+        minidbg.cc 
+        src/debugger.cc 
+        src/utils.cc
+        src/breakpoint.cc
+    )
+add_executable(minidbg ${MINIDBG_SRCS} ext/linenoise/linenoise.c)
 target_link_libraries(minidbg
                       ${PROJECT_SOURCE_DIR}/ext/libelfin/dwarf/libdwarf++.so
                       ${PROJECT_SOURCE_DIR}/ext/libelfin/elf/libelf++.so)
